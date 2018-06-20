@@ -3,10 +3,10 @@
     <new-meeting-form @added="addNewMeeting($event)"></new-meeting-form>
 
     <span v-if="meetings.length == 0">
-               Brak zaplanowanych spotkań.
+               No travels added.
            </span>
     <h3 v-else>
-      Zaplanowane zajęcia ({{ meetings.length }})
+      Planned travels ({{ meetings.length }})
     </h3>
 
     <meetings-list :meetings="meetings"

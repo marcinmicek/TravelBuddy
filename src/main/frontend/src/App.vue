@@ -2,23 +2,23 @@
   <div id="app">
     <h1>
       <img src="./assets/logo.svg" alt="Enroller" class="logo">
-      System do zapisów na zajęcia
+      Travel request platform
     </h1>
     <div v-if="authenticatedUsername">
-      <h2>Witaj {{ authenticatedUsername }}!
-        <a @click="logout()" class="float-right  button-outline button">Wyloguj</a>
+      <h2>Good morning {{ authenticatedUsername }}!
+        <a @click="logout()" class="float-right  button-outline button">Sign out</a>
       </h2>
       <meetings-page :username="authenticatedUsername"></meetings-page>
     </div>
     <div v-else>
       <button :class="isRegistering ? 'button-outline' : ''"
-              @click="isRegistering = false">Zaloguj się</button>
+              @click="isRegistering = false">Sign in</button>
       <button :class="!isRegistering ? 'button-outline' : ''"
-              @click="isRegistering = true">Zarejestruj się</button>
+              @click="isRegistering = true">Sign up</button>
       <login-form @login="login($event)"
                   v-if="!isRegistering"></login-form>
       <login-form @login="register($event)"
-                  :button-label="'Zarejestruj się'"
+                  :button-label="'Sign up'"
                   v-else="isRegistering"></login-form>
 
     </div>
@@ -45,10 +45,10 @@
             register(user) {
                 this.$http.post('participants', user)
                     .then(response => {
-                        alert("Udało sie!");
+                        alert("Success!");
                     })
                     .catch(response => {
-                        alert("Nie udało sie! Status: " + response.status)
+                        alert("No success! Status: " + response.status)
                     });
             },
             logout() {

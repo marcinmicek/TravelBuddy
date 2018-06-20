@@ -2,7 +2,7 @@
   <form @submit.prevent="enter()">
     <label>Login</label>
     <input type="text" v-model="user.login">
-    <label>Hasło</label>
+    <label>Password</label>
     <input type="password" v-model="user.password">
     <button type="submit">{{ labelOfTheButton }}</button>
   </form>
@@ -23,7 +23,7 @@
         },
         computed: {
             labelOfTheButton() {
-                return this.buttonLabel || 'Zaloguj się';
+                return this.buttonLabel || 'Sign in';
             }
         }
     };

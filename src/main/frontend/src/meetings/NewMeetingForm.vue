@@ -1,7 +1,7 @@
 <template>
   <div>
     <form @submit.prevent="addNewMeeting()" v-if="adding">
-      <h3>Dodaj nowe spotkanie</h3>
+      <h3>Add new travel</h3>
       <label>Nazwa</label>
       <input type="text" v-model="newMeeting.name">
       <label>Opis</label>
